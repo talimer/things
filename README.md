@@ -1,2 +1,2 @@
-# things
-Many things for talimer
+# Things
+Many things for Talimer.
