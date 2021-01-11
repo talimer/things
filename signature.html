@@ -1,212 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email Signature</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <style>
-      main {
-        display: flex;
-      }
-      main > div {
-        flex: 50%;
-      }
-      .text-center {
-        text-align: center;
-      }
-      .mb {
-        margin-bottom: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Email Signature</h1>
-    <main>
-      <div>
-        <h2 class="text-center">
-          Copy this HTML display into your email signature
-        </h2>
-        <hr style="margin-bottom: 2rem;" />
-        <table cellspacing="0" cellpadding="0" border="0">
-          <tbody>
-            <tr>
-              <td
-                style="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Signature</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    main {
+      display: flex;
+    }
+
+    main>div {
+      flex: 50%;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mb {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Email Signature</h1>
+  <main>
+    <div>
+      <h2 class="text-center">
+        Copy this HTML display into your email signature
+      </h2>
+      <hr style="margin-bottom: 2rem;" />
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td style="
                   border-right: 1px solid #aaaaaa;
                   padding-left: 0px;
                   padding-top: 0px;
                   padding-right: 8px;
                   padding-bottom: 0px;
-                "
-                valign="top"
-              >
-                <a href="https://talimer.com">
-                  <img
-                    src="https://talimer.com/images/email.v2.logo.png"
-                    alt="Talimer"
-                    width="75"
-                    height="75"
-                    style="width: 75px; height: 75px; border: 0;"
-                    border="0"
-                  />
-                </a>
-              </td>
-              <td
-                style="
+                " valign="top">
+              <a href="https://talimer.com">
+                <img src="https://talimer.com/images/email.v2.logo.png" alt="Talimer" width="75" height="75"
+                  style="width: 75px; height: 75px; border: 0;" border="0" />
+              </a>
+            </td>
+            <td style="
                   padding-left: 12px;
                   padding-top: 0px;
                   padding-right: 0px;
                   padding-bottom: 0px;
-                "
-                valign="top"
-              >
-                <div style="margin-bottom: 5px;">
-                  <span
-                    style="
+                " valign="top">
+              <div style="margin-bottom: 5px;">
+                <span style="
                       text-align: left;
                       color: #444444;
                       font-family: 'Arial', sans-serif;
                       font-size: 11pt;
                       font-weight: bold;
-                    "
-                  >
-                    {{ name }} </span
-                  ><br />
-                  <span
-                    style="
+                    ">
+                  {{ name }} </span><br />
+                <span style="
                       text-align: left;
                       color: #444444;
                       font-family: 'Arial', sans-serif;
                       font-size: 9pt;
-                    "
-                  >
-                    {{ title }}, Talimer, Inc.
-                  </span>
-                </div>
-                <div style="margin-bottom: 5px;">
-                  <span
-                    v-if="phone"
-                    style="
+                    ">
+                  {{ title }}, Talimer, Inc.
+                </span>
+              </div>
+              <div style="margin-bottom: 5px;">
+                <span v-if="phone" style="
                       text-align: left;
                       color: #444444;
                       font-family: 'Arial', sans-serif;
                       font-size: 9pt;
-                    "
-                  >
-                    {{ phone }}
-                  </span>
-                  <font v-if="phone" size="1" style="color: #aaaaaa;"> | </font>
-                  <span
-                    style="
+                    ">
+                  {{ phone }}
+                </span>
+                <font v-if="phone" size="1" style="color: #aaaaaa;"> | </font>
+                <span style="
                       text-align: left;
                       color: #444444;
                       font-family: 'Arial', sans-serif;
                       font-size: 9pt;
-                    "
-                  >
-                    {{ email }}</span
-                  >
-                  <br />
-                  <span
-                    style="
+                    ">
+                  {{ email }}</span>
+                <br />
+                <span style="
                       text-align: left;
                       color: #444444;
                       font-family: 'Arial', sans-serif;
                       font-size: 9pt;
-                    "
-                  >
-                    <a
-                      href="https://talimer.com"
-                      style="text-decoration: none; color: #444444;"
-                      >www.talimer.com</a
-                    >
-                  </span>
-                </div>
-                <a
-                  href="https://www.linkedin.com/company/talimer"
-                  style="text-decoration: none;"
-                >
-                  <img
-                    src="https://talimer.com/images/email.v3.linkedin.png"
-                    alt="LinkedIn"
-                    width="16"
-                    height="16"
-                    style="width: 16px; height: 16px; border: 0;"
-                    border="0"
-                  />
-                </a>
-                <a
-                  href="https://twitter.com/talimerinc"
-                  style="text-decoration: none;"
-                >
-                  <img
-                    src="https://talimer.com/images/email.v3.twitter.png"
-                    alt="Twitter"
-                    width="16"
-                    height="16"
-                    style="width: 16px; height: 16px; border: 0;"
-                    border="0"
-                  />
-                </a>
-                <a
-                  href="https://facebook.com/talimerinc"
-                  style="text-decoration: none;"
-                >
-                  <img
-                    src="https://talimer.com/images/email.v3.facebook.png"
-                    alt="Facebook"
-                    width="16"
-                    height="16"
-                    style="width: 16px; height: 16px; border: 0;"
-                    border="0"
-                  />
-                </a>
-                <a
-                  href="https://www.instagram.com/talimerinc/"
-                  style="text-decoration: none;"
-                >
-                  <img
-                    src="https://talimer.com/images/email.v3.instagram.png"
-                    alt="Instagram"
-                    width="16"
-                    height="16"
-                    style="width: 16px; height: 16px; border: 0;"
-                    border="0"
-                  />
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                    ">
+                  <a href="https://talimer.com" style="text-decoration: none; color: #444444;">www.talimer.com</a>
+                </span>
+              </div>
+              <a href="https://www.linkedin.com/company/talimer" style="text-decoration: none;">
+                <img src="https://talimer.com/images/email.v3.linkedin.png" alt="LinkedIn" width="16" height="16"
+                  style="width: 16px; height: 16px; border: 0;" border="0" />
+              </a>
+              <a href="https://twitter.com/talimerinc" style="text-decoration: none;">
+                <img src="https://talimer.com/images/email.v3.twitter.png" alt="Twitter" width="16" height="16"
+                  style="width: 16px; height: 16px; border: 0;" border="0" />
+              </a>
+              <a href="https://facebook.com/talimerinc" style="text-decoration: none;">
+                <img src="https://talimer.com/images/email.v3.facebook.png" alt="Facebook" width="16" height="16"
+                  style="width: 16px; height: 16px; border: 0;" border="0" />
+              </a>
+              <a href="https://www.instagram.com/talimerinc/" style="text-decoration: none;">
+                <img src="https://talimer.com/images/email.v3.instagram.png" alt="Instagram" width="16" height="16"
+                  style="width: 16px; height: 16px; border: 0;" border="0" />
+              </a>
+              <div style="height: 10px"></div>
+              <a href="http://eepurl.com/g-hCjr">
+                <span style="
+                      color: #444444;
+                      font-family: 'Arial', sans-serif;
+                      font-size: 9pt;
+                    ">
+                  Sign up for our newsletter!
+                </span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2 class="text-center">Adjust Your Settings</h2>
+      <hr style="margin-bottom: 2rem;" />
+      <div class="mb">
+        <input v-model="name" />
       </div>
-      <div>
-        <h2 class="text-center">Adjust Your Settings</h2>
-        <hr style="margin-bottom: 2rem;" />
-        <div class="mb">
-          <input v-model="name" />
-        </div>
-        <div class="mb">
-          <input v-model="title" />
-        </div>
-        <div class="mb">
-          <input v-model="phone" type="tel" />
-        </div>
-        <div class="mb">
-          <input v-model="email" type="email" />
-        </div>
+      <div class="mb">
+        <input v-model="title" />
       </div>
-    </main>
-    <script>
-      new Vue({
-        el: "main",
-        data: {
-          name: "Your Nameson",
-          title: "Chief Business Officer",
-          email: "your.nameson@talimer.com",
-          phone: "414-555-1212",
-        },
-      });
-    </script>
-  </body>
+      <div class="mb">
+        <input v-model="phone" type="tel" />
+      </div>
+      <div class="mb">
+        <input v-model="email" type="email" />
+      </div>
+    </div>
+  </main>
+  <script>
+    new Vue({
+      el: "main",
+      data: {
+        name: "Your Nameson",
+        title: "Chief Business Officer",
+        email: "your.nameson@talimer.com",
+        phone: "414-555-1212",
+      },
+    });
+  </script>
+</body>
+
 </html>
